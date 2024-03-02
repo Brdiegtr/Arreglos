@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Imágenes</title>
+    <style>
+        #image-list {
+            list-style: none;
+            padding: 0;
+        }
+        #image-list li {
+            display: inline-block;
+            margin: 10px;
+        }
+        #image-list img {
+            width: 200px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Imágenes</h1>
+    <ul id="image-list">
+    </ul>
+    <script>
+        var imageUrls = [
+            "arpa.jpg",
+            "chhalupa.jpg",
+            "corona.jpg",
+            "maceta.jpg",
+            "palma.jpg",
+            "pescado.jpg",
+            "pino.jpg",
+            "rana.jpg"
+        ];
+
+        function cargarImagenes() {
+            var imageList = document.getElementById("image-list");
+            imageList.innerHTML = ""; 
+
+
+            imageUrls.forEach(function(url) {
+                var listItem = document.createElement("li");
+                var image = document.createElement("img");
+                image.src = url;
+                listItem.appendChild(image);
+                imageList.appendChild(listItem);
+            });
+        }
+
+        window.onload = cargarImagenes;
+    </script>
+</body>
+</html>
